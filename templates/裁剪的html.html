@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<img src={{ '/uploads/' + t.user().user_image + '?v=3&amp;s=120' }}-->
+</body>
+</html>
+    <script src="/static/lib/jquery-3.0.0.min.js"></script>
+    <script src="/static/lib/markdownit.js"></script>
+    <script src="/static/lib/webuploader/webuploader.withoutimage.js"></script>
+    <script src="/static/lib/editor/editor.js"></script>
+    <script src="/static/lib/editor/ext.js"></script>
+  (function () {
+    var editor = new Editor();
+    editor.render($('.editor')[0]);
+  })();
+
+   var log = function() {
+    console.log.apply(console, arguments)
+}
+
+  var header = document.querySelector('.topic-tab')
+    log('header 的所有元素', header.child)
+  header.addEventListener('click', function(event){
+	var s = event.target
+	log('click target', s )
+	var classList = s.classList
+	if (classList.contains('current-tab')) {
+	  log('有这个class')
+  }
+    else{
+        log('没有这个class')
+
+    }
+
+})
+
+var button = document.querySelector('.header')
+log('button', button)
+button.addEventListener('click', function(event){
+	var s = event.target
+	log('s', s)
+	s.className += ' current-tab'
+    var t = document.querySelector('.current-tab')
+    t.className = 'topic-tab'
+})

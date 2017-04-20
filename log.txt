@@ -1,0 +1,36 @@
+18:59:46 u <User: 
+  password = 123456
+  username = aaa
+  _sa_instance_state = <sqlalchemy.orm.state.InstanceState object at 0x02C1D0D0>
+>
+19:09:52 u <User: 
+  password = 123456
+  username = aaa
+  _sa_instance_state = <sqlalchemy.orm.state.InstanceState object at 0x02C09FD0>
+>
+19:09:53 注册成功
+19:11:19 u <User: 
+  username = aaa
+  _sa_instance_state = <sqlalchemy.orm.state.InstanceState object at 0x02C0AFD0>
+  password = 123456
+>
+19:11:19 注册成功
+21:25:10 u <User: 
+  password = 123456
+  username = 123456
+  _sa_instance_state = <sqlalchemy.orm.state.InstanceState object at 0x02FB0C70>
+>
+21:25:10 注册成功
+18:16:57 u <User: 
+  avatar = default.png
+  password = aaaaaa
+  _sa_instance_state = <sqlalchemy.orm.state.InstanceState object at 0x02BC3ED0>
+  username = aaaaaa
+>
+18:16:57 注册成功
+16:32:48 u <User: 
+  password = bbbb
+  username = bbbb
+  avatar = default.png
+  _sa_instance_state = <sqlalchemy.orm.state.InstanceState object at 0x030BEF50>
+>

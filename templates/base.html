@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}bbs club</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/lib/editor/editor.css">
+    <link rel="stylesheet" href="/static/lib/webuploader/webuploader.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bbs.css') }}">
+     <script src="/static/lib/markdownit.js"></script>
+    <script src="/static/js/jquery-3.0.0.min.js"></script>
+    <style>
+        .comment_num{
+            float:right;
+        }
+        body{
+            background: cadetblue;
+        }
+        .topic-tab.current-tab {
+            background-color: #f89406;
+        }
+        .span-success{
+            background-color: #f89406;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+<div class="bbs-top">
+    <form id="search_form" class="navbar-search" action="http://www.baidu.com">
+            <input type="text" id="q" name="q" placeholder="Search" class="search-query span3" value="">
+    </form>
+    <nav class="bbs-menu">
+        <a class="new-nav-link new-active" href="/">首页</a>
+        <a class="new-nav-link" href={{ "/auth/profile/" + cu.id|string }}><img src={{ '/auth/uploads/' + cu.avatar + '?v=3&amp;s=120' }}
+                                title="atian25" width=30px height=30px/></a>
+        <a class="new-nav-link" href="/auth/logout">登出</a>
+    </nav>
+</div>
+    <div id="main">
+        {% block sidebar %}
+        <div id="sidebar">
+        <div class="panel">
+            <div class="inner">
+                <a href="/new" class="create_topic_btn">
+                    <span class="span-success">发布话题</span>
+                </a>
+            </div>
+        </div>
+    </div>
+        {% endblock %}
+         {% block content %}
+        <div id="content">
+
+
+         </div>
+        {% endblock %}
+        <div class="bbs-sidebar bbs-box">
+
+        </div>
+    </div>
+{% endblock %}
+    {% block bottom %}
+    <div class="bbs-bottom">
+        <div class="bbs-bottom-content bbs-content-size">
+            <div class="bbs-bottom-nav">
+                <a href="#">关于</a>
+                <span>&nbsp;·&nbsp;</span>
+                <a href="#">FAQ</a>
+                <span>&nbsp;·&nbsp;</span>
+                <a href="#">鸣谢</a>
+                <span>&nbsp;·&nbsp;</span>
+            </div>
+            <div class="bbs-bottom-about">
+                创意工作者们的社区<br>World is powered by solitude
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+</body>
+</html>

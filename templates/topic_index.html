@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    所有topic
+{% endblock %}
+
+{% block content %}
+
+        {% for node in node_list %}
+            {{ node.name }}
+        {% endfor %}
+
+    {% for topic in topic_list %}
+    <div>
+        <a href="{{ url_for('topic.show', id=topic.id) }}">
+            {{ topic.title }}
+        </a>
+            来自 {{ topic.user.username }}
+            {{ topic.node.name }}板块
+            {{ topic.ct }}
+    </div>
+    {% endfor %}
+{% endblock %}
+
+{% block sidebar %}
+    <h1>hello </h1>
+{% endblock %}

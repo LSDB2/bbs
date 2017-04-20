@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} 修改页面 {% endblock %}
+
+<body>
+    <div>
+        {% block content %}
+        {{ topic.title }}
+        <div class='markdown-text'>
+        <form action="{{ url_for('topic.update', id=topic.id) }}" method="post">
+            <input class='editor' name="content" value="{{ topic.content }}" rows='20'>
+            <button>更新</button>
+        </form>
+        {% endblock %}
+        </div>
+    </div>
+</body>
+
