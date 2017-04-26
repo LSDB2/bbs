@@ -1,6 +1,11 @@
 server {
-    listen 80;
+    server_name xy90.cc;
+    listen 80 default_server;
+    listen [::]:80 default_server ipv6only=on;
+
+    root /home/bbs;
+
     location / {
-        proxy_pass http://localhost:2001;
+    proxy_pass proxy_pass http://localhost:2001;
     }
 }
